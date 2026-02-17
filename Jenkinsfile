@@ -5,21 +5,21 @@ pipeline {
       steps {
         checkout scm
       }
-}
-stage('Build Java') {
-steps {
-sh 'javac Hello.java'
-}
-}
-stage('Run') {
-steps {
-sh 'java Hello'
+    }
+  stage('Build Java') {
+    steps {
+      sh 'javac Hello.java'
+    }
+  }
+    stage('Run') {
+      steps {
+        sh 'java Hello'
 
-}
-}
-}
+      }
+    }
+  }
 post {
-success { echo 'SUCCESS ' }
-failure { echo 'FAILURE ' }
-}
+  success { echo 'SUCCESS ' }
+  failure { echo 'FAILURE ' }
+  }
 }
